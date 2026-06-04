@@ -1,0 +1,51 @@
+# WordPress Core Files
+wp-admin/
+wp-includes/
+
+# WordPress Config
+wp-config.php
+wp-config-bk.php
+wp-config-sample.php
+
+# WordPress Root Files
+wp-blog-header.php
+wp-comments-post.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+
+# WordPress Content (except our custom plugin)
+/wp-content/themes/
+/wp-content/plugins/
+!/wp-content/plugins/elementor-testimonial-widget/
+/wp-content/upgrade/
+/wp-content/upgrade-temp-backup/
+/wp-content/ai1wm-backups/
+
+# Common WordPress uploads and cache
+/wp-content/uploads/
+/wp-content/cache/
+
+# OS and IDE files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+Thumbs.db
+
+# Dependencies
+node_modules/
+vendor/
+
+# Environment files
+.env
+.env.local
+.env.*.local
