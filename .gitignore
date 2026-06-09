@@ -23,7 +23,7 @@ xmlrpc.php
 # WordPress Content (except our custom plugin)
 /wp-content/themes/
 /wp-content/plugins/*
-!/wp-content/plugins/elementor-testimonial-widget/
+!/wp-content/plugins/testimonial-slider-for-elementor/
 /wp-content/upgrade/
 /wp-content/upgrade-temp-backup/
 /wp-content/ai1wm-backups/
