@@ -1,5 +1,5 @@
-=== Testimonial Card Widget ===
-Contributors: abdullahijaz
+=== Testimonial Slider for Elementor ===
+Contributors: abdullah340, abdullahijaz
 Tags: testimonial, elementor, slider, review, carousel
 Requires at least: 5.8
 Tested up to: 7.0
@@ -12,7 +12,7 @@ A lightweight Elementor testimonial slider widget with repeater, ratings, arrows
 
 == Description ==
 
-Testimonial Card Widget adds a fully customizable testimonial slider to Elementor. Add unlimited testimonials using a repeater, each with a photo, name, job title, star rating and review text.
+Testimonial Slider for Elementor adds a fully customizable testimonial slider to Elementor. Add unlimited testimonials using a repeater, each with a photo, name, job title, star rating and review text.
 
 **Features:**
 * Repeater — add unlimited testimonials
@@ -34,7 +34,7 @@ Testimonial Card Widget adds a fully customizable testimonial slider to Elemento
 1. Upload the `elementor-testimonial-widget` folder to `/wp-content/plugins/`.
 2. Activate the plugin through the **Plugins** menu in WordPress.
 3. Open any page with Elementor.
-4. Search for **"Testimonial Card"** in the widget panel and drag it onto the canvas.
+4. Search for **"Testimonial Slider"** in the widget panel and drag it onto the canvas.
 
 == Frequently Asked Questions ==
 

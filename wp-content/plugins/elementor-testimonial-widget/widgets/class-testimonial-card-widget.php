@@ -1,6 +1,6 @@
 <?php
 /**
- * Testimonial Card Widget class.
+ * Testimonial Slider for Elementor widget class.
  *
  * @package TCW
  */
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 class Testimonial_Card_Widget extends Widget_Base {
 
     public function get_name()       { return 'tcw_testimonial_card'; }
-    public function get_title()      { return __( 'Testimonial Card', 'testimonial-card-widget' ); }
+    public function get_title()      { return __( 'Testimonial Card', 'testimonial-slider-for-elementor' ); }
     public function get_icon()       { return 'eicon-testimonial-carousel'; }
     public function get_categories() { return [ 'general' ]; }
     public function get_keywords()   { return [ 'testimonial', 'review', 'quote', 'card', 'slider', 'carousel' ]; }
@@ -35,47 +35,47 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         // ── Testimonials Repeater
         $this->start_controls_section( 'section_testimonials', [
-            'label' => __( 'Testimonials', 'testimonial-card-widget' ),
+            'label' => __( 'Testimonials', 'testimonial-slider-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
         $repeater = new Repeater();
 
         $repeater->add_control( 'testimonial_text', [
-            'label'       => __( 'Review Text', 'testimonial-card-widget' ),
+            'label'       => __( 'Review Text', 'testimonial-slider-for-elementor' ),
             'type'        => Controls_Manager::TEXTAREA,
             'rows'        => 5,
-            'default'     => __( 'Working with this team was an absolute game-changer for our business. The attention to detail and commitment to excellence is unmatched!', 'testimonial-card-widget' ),
+            'default'     => __( 'Working with this team was an absolute game-changer for our business. The attention to detail and commitment to excellence is unmatched!', 'testimonial-slider-for-elementor' ),
             'label_block' => true,
         ] );
 
         $repeater->add_control( 'author_name', [
-            'label'   => __( 'Name', 'testimonial-card-widget' ),
+            'label'   => __( 'Name', 'testimonial-slider-for-elementor' ),
             'type'    => Controls_Manager::TEXT,
-            'default' => __( 'Sarah Johnson', 'testimonial-card-widget' ),
+            'default' => __( 'Sarah Johnson', 'testimonial-slider-for-elementor' ),
         ] );
 
         $repeater->add_control( 'author_title', [
-            'label'   => __( 'Job Title', 'testimonial-card-widget' ),
+            'label'   => __( 'Job Title', 'testimonial-slider-for-elementor' ),
             'type'    => Controls_Manager::TEXT,
-            'default' => __( 'CEO, Acme Corp', 'testimonial-card-widget' ),
+            'default' => __( 'CEO, Acme Corp', 'testimonial-slider-for-elementor' ),
         ] );
 
         $repeater->add_control( 'author_image', [
-            'label'   => __( 'Photo', 'testimonial-card-widget' ),
+            'label'   => __( 'Photo', 'testimonial-slider-for-elementor' ),
             'type'    => Controls_Manager::MEDIA,
             'default' => [ 'url' => \Elementor\Utils::get_placeholder_image_src() ],
         ] );
 
         $repeater->add_control( 'rating_value', [
-            'label'   => __( 'Stars (1–5)', 'testimonial-card-widget' ),
+            'label'   => __( 'Stars (1–5)', 'testimonial-slider-for-elementor' ),
             'type'    => Controls_Manager::NUMBER,
             'min'     => 1, 'max' => 5, 'step' => 1,
             'default' => 5,
         ] );
 
         $this->add_control( 'testimonials', [
-            'label'       => __( 'Testimonials', 'testimonial-card-widget' ),
+            'label'       => __( 'Testimonials', 'testimonial-slider-for-elementor' ),
             'type'        => Controls_Manager::REPEATER,
             'fields'      => $repeater->get_controls(),
             'default'     => [
@@ -105,12 +105,12 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         // ── Quote / Alignment
         $this->start_controls_section( 'section_quote', [
-            'label' => __( 'Quote & Layout', 'testimonial-card-widget' ),
+            'label' => __( 'Quote & Layout', 'testimonial-slider-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
         $this->add_control( 'quote_icon', [
-            'label'       => __( 'Quote Icon', 'testimonial-card-widget' ),
+            'label'       => __( 'Quote Icon', 'testimonial-slider-for-elementor' ),
             'type'        => Controls_Manager::ICONS,
             'default'     => [ 'value' => 'fas fa-quote-left', 'library' => 'fa-solid' ],
             'skin'        => 'inline',
@@ -118,12 +118,12 @@ class Testimonial_Card_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'alignment', [
-            'label'   => __( 'Alignment', 'testimonial-card-widget' ),
+            'label'   => __( 'Alignment', 'testimonial-slider-for-elementor' ),
             'type'    => Controls_Manager::CHOOSE,
             'options' => [
-                'left'   => [ 'title' => __( 'Left',   'testimonial-card-widget' ), 'icon' => 'eicon-text-align-left' ],
-                'center' => [ 'title' => __( 'Center', 'testimonial-card-widget' ), 'icon' => 'eicon-text-align-center' ],
-                'right'  => [ 'title' => __( 'Right',  'testimonial-card-widget' ), 'icon' => 'eicon-text-align-right' ],
+                'left'   => [ 'title' => __( 'Left',   'testimonial-slider-for-elementor' ), 'icon' => 'eicon-text-align-left' ],
+                'center' => [ 'title' => __( 'Center', 'testimonial-slider-for-elementor' ), 'icon' => 'eicon-text-align-center' ],
+                'right'  => [ 'title' => __( 'Right',  'testimonial-slider-for-elementor' ), 'icon' => 'eicon-text-align-right' ],
             ],
             'default' => 'center',
             'toggle'  => false,
@@ -133,21 +133,21 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         // ── Rating global
         $this->start_controls_section( 'section_rating', [
-            'label' => __( 'Rating', 'testimonial-card-widget' ),
+            'label' => __( 'Rating', 'testimonial-slider-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
         $this->add_control( 'show_rating', [
-            'label'        => __( 'Show Rating', 'testimonial-card-widget' ),
+            'label'        => __( 'Show Rating', 'testimonial-slider-for-elementor' ),
             'type'         => Controls_Manager::SWITCHER,
-            'label_on'     => __( 'Yes', 'testimonial-card-widget' ),
-            'label_off'    => __( 'No', 'testimonial-card-widget' ),
+            'label_on'     => __( 'Yes', 'testimonial-slider-for-elementor' ),
+            'label_off'    => __( 'No', 'testimonial-slider-for-elementor' ),
             'return_value' => 'yes',
             'default'      => 'yes',
         ] );
 
         $this->add_control( 'rating_icon', [
-            'label'       => __( 'Star Icon', 'testimonial-card-widget' ),
+            'label'       => __( 'Star Icon', 'testimonial-slider-for-elementor' ),
             'type'        => Controls_Manager::ICONS,
             'default'     => [ 'value' => 'fas fa-star', 'library' => 'fa-solid' ],
             'skin'        => 'inline',
@@ -159,19 +159,19 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         // ── Slider Settings
         $this->start_controls_section( 'section_slider', [
-            'label' => __( 'Slider Settings', 'testimonial-card-widget' ),
+            'label' => __( 'Slider Settings', 'testimonial-slider-for-elementor' ),
             'tab'   => Controls_Manager::TAB_CONTENT,
         ] );
 
         $this->add_control( 'autoplay', [
-            'label'        => __( 'Autoplay', 'testimonial-card-widget' ),
+            'label'        => __( 'Autoplay', 'testimonial-slider-for-elementor' ),
             'type'         => Controls_Manager::SWITCHER,
             'return_value' => 'yes',
             'default'      => 'yes',
         ] );
 
         $this->add_control( 'autoplay_speed', [
-            'label'     => __( 'Autoplay Speed (ms)', 'testimonial-card-widget' ),
+            'label'     => __( 'Autoplay Speed (ms)', 'testimonial-slider-for-elementor' ),
             'type'      => Controls_Manager::NUMBER,
             'default'   => 4000,
             'min'       => 1000, 'max' => 10000, 'step' => 500,
@@ -179,21 +179,21 @@ class Testimonial_Card_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'loop', [
-            'label'        => __( 'Infinite Loop', 'testimonial-card-widget' ),
+            'label'        => __( 'Infinite Loop', 'testimonial-slider-for-elementor' ),
             'type'         => Controls_Manager::SWITCHER,
             'return_value' => 'yes',
             'default'      => 'yes',
         ] );
 
         $this->add_control( 'show_dots', [
-            'label'        => __( 'Show Dots', 'testimonial-card-widget' ),
+            'label'        => __( 'Show Dots', 'testimonial-slider-for-elementor' ),
             'type'         => Controls_Manager::SWITCHER,
             'return_value' => 'yes',
             'default'      => 'yes',
         ] );
 
         $this->add_control( 'show_arrows', [
-            'label'        => __( 'Show Arrows', 'testimonial-card-widget' ),
+            'label'        => __( 'Show Arrows', 'testimonial-slider-for-elementor' ),
             'type'         => Controls_Manager::SWITCHER,
             'return_value' => 'yes',
             'default'      => 'yes',
@@ -205,19 +205,19 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         // Card
         $this->start_controls_section( 'style_card', [
-            'label' => __( 'Card', 'testimonial-card-widget' ),
+            'label' => __( 'Card', 'testimonial-slider-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
         $this->add_control( 'card_background', [
-            'label'     => __( 'Background Color', 'testimonial-card-widget' ),
+            'label'     => __( 'Background Color', 'testimonial-slider-for-elementor' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#ffffff',
             'selectors' => [ '{{WRAPPER}} .tcw-card' => 'background-color: {{VALUE}};' ],
         ] );
 
         $this->add_responsive_control( 'card_padding', [
-            'label'      => __( 'Padding', 'testimonial-card-widget' ),
+            'label'      => __( 'Padding', 'testimonial-slider-for-elementor' ),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', 'em', '%' ],
             'default'    => [ 'top'=>'32','right'=>'32','bottom'=>'32','left'=>'32','unit'=>'px','isLinked'=>true ],
@@ -225,7 +225,7 @@ class Testimonial_Card_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'card_border_radius', [
-            'label'      => __( 'Border Radius', 'testimonial-card-widget' ),
+            'label'      => __( 'Border Radius', 'testimonial-slider-for-elementor' ),
             'type'       => Controls_Manager::DIMENSIONS,
             'size_units' => [ 'px', '%' ],
             'default'    => [ 'top'=>'16','right'=>'16','bottom'=>'16','left'=>'16','unit'=>'px','isLinked'=>true ],
@@ -246,19 +246,19 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         // Quote Icon
         $this->start_controls_section( 'style_quote_icon', [
-            'label' => __( 'Quote Icon', 'testimonial-card-widget' ),
+            'label' => __( 'Quote Icon', 'testimonial-slider-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
         $this->add_control( 'quote_icon_color', [
-            'label'     => __( 'Color', 'testimonial-card-widget' ),
+            'label'     => __( 'Color', 'testimonial-slider-for-elementor' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#6366f1',
             'selectors' => [ '{{WRAPPER}} .tcw-quote-icon' => 'color: {{VALUE}};' ],
         ] );
 
         $this->add_responsive_control( 'quote_icon_size', [
-            'label'      => __( 'Size', 'testimonial-card-widget' ),
+            'label'      => __( 'Size', 'testimonial-slider-for-elementor' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ 'px' ],
             'range'      => [ 'px' => [ 'min' => 16, 'max' => 80 ] ],
@@ -270,12 +270,12 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         // Testimonial Text
         $this->start_controls_section( 'style_text', [
-            'label' => __( 'Testimonial Text', 'testimonial-card-widget' ),
+            'label' => __( 'Testimonial Text', 'testimonial-slider-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
         $this->add_control( 'text_color', [
-            'label'     => __( 'Color', 'testimonial-card-widget' ),
+            'label'     => __( 'Color', 'testimonial-slider-for-elementor' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#374151',
             'selectors' => [ '{{WRAPPER}} .tcw-text' => 'color: {{VALUE}};' ],
@@ -287,7 +287,7 @@ class Testimonial_Card_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'text_spacing', [
-            'label'      => __( 'Bottom Spacing', 'testimonial-card-widget' ),
+            'label'      => __( 'Bottom Spacing', 'testimonial-slider-for-elementor' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ 'px' ],
             'range'      => [ 'px' => [ 'min' => 0, 'max' => 60 ] ],
@@ -299,12 +299,12 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         // Author
         $this->start_controls_section( 'style_author', [
-            'label' => __( 'Author', 'testimonial-card-widget' ),
+            'label' => __( 'Author', 'testimonial-slider-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
         $this->add_responsive_control( 'image_size', [
-            'label'      => __( 'Photo Size', 'testimonial-card-widget' ),
+            'label'      => __( 'Photo Size', 'testimonial-slider-for-elementor' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ 'px' ],
             'range'      => [ 'px' => [ 'min' => 32, 'max' => 120 ] ],
@@ -313,7 +313,7 @@ class Testimonial_Card_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'image_border_radius', [
-            'label'      => __( 'Photo Border Radius', 'testimonial-card-widget' ),
+            'label'      => __( 'Photo Border Radius', 'testimonial-slider-for-elementor' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ 'px', '%' ],
             'range'      => [ 'px' => [ 'min' => 0, 'max' => 60 ], '%' => [ 'min' => 0, 'max' => 50 ] ],
@@ -322,7 +322,7 @@ class Testimonial_Card_Widget extends Widget_Base {
         ] );
 
         $this->add_control( 'author_name_color', [
-            'label'     => __( 'Name Color', 'testimonial-card-widget' ),
+            'label'     => __( 'Name Color', 'testimonial-slider-for-elementor' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#111827',
             'selectors' => [ '{{WRAPPER}} .tcw-author-name' => 'color: {{VALUE}};' ],
@@ -330,12 +330,12 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         $this->add_group_control( Group_Control_Typography::get_type(), [
             'name'     => 'author_name_typography',
-            'label'    => __( 'Name Typography', 'testimonial-card-widget' ),
+            'label'    => __( 'Name Typography', 'testimonial-slider-for-elementor' ),
             'selector' => '{{WRAPPER}} .tcw-author-name',
         ] );
 
         $this->add_control( 'author_title_color', [
-            'label'     => __( 'Title Color', 'testimonial-card-widget' ),
+            'label'     => __( 'Title Color', 'testimonial-slider-for-elementor' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#6b7280',
             'selectors' => [ '{{WRAPPER}} .tcw-author-title' => 'color: {{VALUE}};' ],
@@ -343,7 +343,7 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         $this->add_group_control( Group_Control_Typography::get_type(), [
             'name'     => 'author_title_typography',
-            'label'    => __( 'Title Typography', 'testimonial-card-widget' ),
+            'label'    => __( 'Title Typography', 'testimonial-slider-for-elementor' ),
             'selector' => '{{WRAPPER}} .tcw-author-title',
         ] );
 
@@ -351,20 +351,20 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         // Rating Stars
         $this->start_controls_section( 'style_rating', [
-            'label'     => __( 'Rating Stars', 'testimonial-card-widget' ),
+            'label'     => __( 'Rating Stars', 'testimonial-slider-for-elementor' ),
             'tab'       => Controls_Manager::TAB_STYLE,
             'condition' => [ 'show_rating' => 'yes' ],
         ] );
 
         $this->add_control( 'star_color', [
-            'label'     => __( 'Star Color', 'testimonial-card-widget' ),
+            'label'     => __( 'Star Color', 'testimonial-slider-for-elementor' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#f59e0b',
             'selectors' => [ '{{WRAPPER}} .tcw-star' => 'color: {{VALUE}};' ],
         ] );
 
         $this->add_responsive_control( 'star_size', [
-            'label'      => __( 'Star Size', 'testimonial-card-widget' ),
+            'label'      => __( 'Star Size', 'testimonial-slider-for-elementor' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ 'px' ],
             'range'      => [ 'px' => [ 'min' => 10, 'max' => 40 ] ],
@@ -373,7 +373,7 @@ class Testimonial_Card_Widget extends Widget_Base {
         ] );
 
         $this->add_responsive_control( 'star_gap', [
-            'label'      => __( 'Gap Between Stars', 'testimonial-card-widget' ),
+            'label'      => __( 'Gap Between Stars', 'testimonial-slider-for-elementor' ),
             'type'       => Controls_Manager::SLIDER,
             'size_units' => [ 'px' ],
             'range'      => [ 'px' => [ 'min' => 0, 'max' => 16 ] ],
@@ -385,26 +385,26 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         // Navigation
         $this->start_controls_section( 'style_nav', [
-            'label' => __( 'Navigation', 'testimonial-card-widget' ),
+            'label' => __( 'Navigation', 'testimonial-slider-for-elementor' ),
             'tab'   => Controls_Manager::TAB_STYLE,
         ] );
 
         $this->add_control( 'dot_color_active', [
-            'label'     => __( 'Active Dot Color', 'testimonial-card-widget' ),
+            'label'     => __( 'Active Dot Color', 'testimonial-slider-for-elementor' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#6366f1',
             'selectors' => [ '{{WRAPPER}} .tcw-dots .swiper-pagination-bullet-active' => 'background-color: {{VALUE}} !important;' ],
         ] );
 
         $this->add_control( 'dot_color_inactive', [
-            'label'     => __( 'Inactive Dot Color', 'testimonial-card-widget' ),
+            'label'     => __( 'Inactive Dot Color', 'testimonial-slider-for-elementor' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#d1d5db',
             'selectors' => [ '{{WRAPPER}} .tcw-dots .swiper-pagination-bullet' => 'background-color: {{VALUE}};' ],
         ] );
 
         $this->add_control( 'arrow_color', [
-            'label'     => __( 'Arrow Color', 'testimonial-card-widget' ),
+            'label'     => __( 'Arrow Color', 'testimonial-slider-for-elementor' ),
             'type'      => Controls_Manager::COLOR,
             'default'   => '#6366f1',
             'selectors' => [
@@ -492,10 +492,10 @@ class Testimonial_Card_Widget extends Widget_Base {
             </div><!-- .swiper -->
 
             <?php if ( $show_arrows ) : ?>
-                <button class="tcw-arrow tcw-arrow--prev" id="tcw-prev-<?php echo esc_attr( $widget_id ); ?>" aria-label="<?php esc_attr_e( 'Previous', 'testimonial-card-widget' ); ?>">
+                <button class="tcw-arrow tcw-arrow--prev" id="tcw-prev-<?php echo esc_attr( $widget_id ); ?>" aria-label="<?php esc_attr_e( 'Previous', 'testimonial-slider-for-elementor' ); ?>">
                     <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8.5 1.5L2 8L8.5 14.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
-                <button class="tcw-arrow tcw-arrow--next" id="tcw-next-<?php echo esc_attr( $widget_id ); ?>" aria-label="<?php esc_attr_e( 'Next', 'testimonial-card-widget' ); ?>">
+                <button class="tcw-arrow tcw-arrow--next" id="tcw-next-<?php echo esc_attr( $widget_id ); ?>" aria-label="<?php esc_attr_e( 'Next', 'testimonial-slider-for-elementor' ); ?>">
                     <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1.5 1.5L8 8L1.5 14.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </button>
             <?php endif; ?>
@@ -506,24 +506,24 @@ class Testimonial_Card_Widget extends Widget_Base {
 
         </div><!-- .tcw-slider-wrapper -->
 
-        <script>
+        <?php
+        wp_enqueue_script( 'tcw-testimonial-card' );
+        wp_add_inline_script( 'tcw-testimonial-card', '
         ( function() {
-            function tcwInit_<?php echo esc_js( $widget_id ); ?>() {
-                if ( typeof Swiper === 'undefined' ) {
-                    setTimeout( tcwInit_<?php echo esc_js( $widget_id ); ?>, 150 );
+            function tcwInit_' . esc_js( $widget_id ) . '() {
+                if ( typeof Swiper === \'undefined\' ) {
+                    setTimeout( tcwInit_' . esc_js( $widget_id ) . ', 150 );
                     return;
                 }
-                new Swiper( '#tcw-swiper-<?php echo esc_js( $widget_id ); ?>', <?php echo wp_json_encode( $opts ); ?> );
+                new Swiper( \'#tcw-swiper-' . esc_js( $widget_id ) . '\', ' . wp_json_encode( $opts ) . ' );
             }
-            if ( document.readyState === 'loading' ) {
-                document.addEventListener( 'DOMContentLoaded', tcwInit_<?php echo esc_js( $widget_id ); ?> );
+            if ( document.readyState === \'loading\' ) {
+                document.addEventListener( \'DOMContentLoaded\', tcwInit_' . esc_js( $widget_id ) . ' );
             } else {
-                tcwInit_<?php echo esc_js( $widget_id ); ?>();
+                tcwInit_' . esc_js( $widget_id ) . '();
             }
         } )();
-        </script>
-
-        <?php
+        ' );
     }
 
     /* ── EDITOR LIVE PREVIEW ─────────────────────── */
